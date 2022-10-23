@@ -43,9 +43,9 @@ public class TipoUsuarioController {
 	public TipoUsuario update(@RequestBody TipoUsuario tipoUsuario,@PathVariable Integer id) {
 		TipoUsuario tubd = tipoUsuarioService.findById(id).get();
 		
-		tipoUsuario.setNombreTipo(tubd.getNombreTipo());
+		tubd.setNombreTipo(tipoUsuario.getNombreTipo());
 		
-		return tipoUsuarioService.save(tipoUsuario);
+		return tipoUsuarioService.save(tubd);
 			
 	}
 	
